@@ -22,7 +22,18 @@ const getBooks = function (data) {
   })
 }
 
+const deleteBook = function (id) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiOrigin + '/books/' + id,
+    headers: {
+      Authorization: 'Token token=' + store.store.token
+    }
+  })
+}
+
 module.exports = {
   createBook,
-  getBooks
+  getBooks,
+  deleteBook
 }

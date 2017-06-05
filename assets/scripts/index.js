@@ -19,7 +19,7 @@ $(document).on('submit', '#sign-out', userEvents.onSignOut)
 // const example = require('./example')
 
 $(document).on('submit', '#create-new-book', bookEvents.onCreateBook)
-
+$(document).on('click', '.delete-button', bookEvents.onDeleteBook)
 
 // use require without a reference to ensure a file is bundled
 require('./example')

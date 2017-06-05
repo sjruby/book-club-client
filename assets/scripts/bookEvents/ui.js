@@ -14,12 +14,17 @@ const onCreateBookSuccess = function (response) {
 }
 
 const getBooksSuccess = function (response) {
+  $('.book-tables').remove()
   $message.text('Check out the books below! ')
   const dataForHandlebars = {}
   dataForHandlebars.books = limitBooksToCurrentUser(response.books)
   const booksHTML = booksTable(dataForHandlebars)
   console.log(response)
   $('.footer').prepend(booksHTML)
+}
+
+const deleteGoalSuccess = function (response) {
+  $message.text('Nobody likes that book anyway ')
 }
 
 const onError = function (response) {
@@ -30,5 +35,6 @@ const onError = function (response) {
 module.exports = {
   onCreateBookSuccess,
   onError,
-  getBooksSuccess
+  getBooksSuccess,
+  deleteGoalSuccess
 }

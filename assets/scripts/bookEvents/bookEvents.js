@@ -20,8 +20,18 @@ const onCreateBook = function (event) {
     .catch(ui.onError)
 }
 
+const onDeleteBook = function (event) {
+  event.preventDefault()
+  const id = $(event.target).parents('tr').attr('data-id')
+
+  api.deleteBook(id)
+    .done(ui.deleteGoalSuccess)
+    .done(getBooks)
+    .catch(ui.failure)
+}
 
 module.exports = {
   onCreateBook,
-  getBooks
+  getBooks,
+  onDeleteBook
 }
