@@ -1,0 +1,25 @@
+<h1> HANDLEBARS CONNECTED </h1>
+<table id='display-goals'>
+  <tr class="table-header">
+    <td>Title</td>
+    <td>Status</td>
+    <td>Start On</td>
+    <td>Modify</td>
+    <td>Delete</td>
+  </tr>
+
+{{#each books as |book|}}
+<tr data-id={{book.id}}>
+  <td id='title-{{book.id}}'>{{book.title}}</td>
+  <td id='status-{{book.id}}'>{{book.status}}</td>
+  <td id='start-date-{{book.id}}'>{{book.startDate}}</td>
+  <td><button type="button" id='modify-{{book.id}}' class='modify-button'>
+    Modify
+  </button></td>
+  <td><button type="button" id='delete-{{book.id}}' class='delete-button'>
+    Delete
+  </button></td>
+</tr>
+{{/each}}
+
+</table>

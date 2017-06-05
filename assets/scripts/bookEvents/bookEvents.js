@@ -22,5 +22,6 @@ const onCreateBook = function (event) {
 
 
 module.exports = {
-  onCreateBook
+  onCreateBook,
+  getBooks
 }

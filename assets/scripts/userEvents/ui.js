@@ -32,6 +32,7 @@ const signOutSuccess = () => {
   const signInHTML = showSignInUp()
   $('body').append(signInHTML)
   $('.footer').remove()
+  $('.add-a-book').remove()
 }
 
 const onError = function (response) {
