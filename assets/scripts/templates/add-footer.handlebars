@@ -1,0 +1,45 @@
+<footer class="footer">
+    <h5> Account Managment </h5>
+    <div class="row">
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-default change-pw-button" data-toggle="modal" data-target="#changePW">
+Change Password
+</button>
+        </div>
+        <div class="col-xs-6">
+            <form class='userEvents sign-out' id='sign-out'>
+                <button type="submit" class="btn btn-default sign-out">Sign Out</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade" id="changePW" tabindex="-1" role="dialog" aria-labelledby="changePWLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="changePWLabel">Change your PW</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form class='userEvents' id='change-pw'>
+                        <div class="form-group">
+                            <input type="password" name="passwords[old]" id="old-pw" placeholder="Enter old PW">
+                            <input type="password" name="passwords[new]" id="new-pw" placeholder="Enter new PW">
+                        </div>
+                        <button type="submit" class="btn btn-default">Change PW</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <p id="changePWMessage" class="message"> </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <button type="button" class="btn btn-default close-form" data-dismiss="modal">Close Form</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
