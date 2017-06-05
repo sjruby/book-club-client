@@ -4,6 +4,7 @@ const $message = $('#message')
 const store = require('../store')
 const showSignInUp = require('../templates/create-sign-sign-up.handlebars')
 const pwSignOutForms = require('../templates/add-footer.handlebars')
+const newBookForm = require('../templates/add-book-template.handlebars')
 
 const onSignUpSuccess = function (data) {
     $message.text('You have signed up, now login in below to get started!')
@@ -14,6 +15,8 @@ const onSignInSuccess = function (data) {
   $('.welcome-div').remove()
   $message.text('You have signed in YAY!')
   const changePWHTML = pwSignOutForms()
+  const newBookHTML = newBookForm()
+  $('body').append(newBookHTML)
   $('body').append(changePWHTML)
 }
 
