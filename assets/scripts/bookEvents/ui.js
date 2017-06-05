@@ -31,10 +31,14 @@ const onError = function (response) {
   $message.text('That bombed...as a devolper I have determined it was user error :) ')
 }
 
+const updateBookSucess = function (response) {
+  $message.text('Update that book club fool!')
+}
 
 module.exports = {
   onCreateBookSuccess,
   onError,
   getBooksSuccess,
-  deleteGoalSuccess
+  deleteGoalSuccess,
+  updateBookSucess
 }

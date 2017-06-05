@@ -32,8 +32,20 @@ const deleteBook = function (id) {
   })
 }
 
+const updateBook = function (data) {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiOrigin + '/books/' + data.id,
+    headers: {
+      Authorization: 'Token token=' + store.store.token
+    },
+    data: data
+  })
+}
+
 module.exports = {
   createBook,
   getBooks,
-  deleteBook
+  deleteBook,
+  updateBook
 }

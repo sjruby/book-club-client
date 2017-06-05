@@ -11,7 +11,7 @@
 
 {{#each books as |book|}}
 <tr data-id={{book.id}}>
-  <td id='title-{{book.id}}'>{{book.title}}</td>
+  <td id='title-{{book.id}}' class='title'>{{book.title}}</td>
   <td id='status-{{book.id}}'>{{book.status}}</td>
   <td id='start-date-{{book.id}}'>{{book.startDate}}</td>
   <td><button type="button" id='modify-{{book.id}}' class='modify-button'>
