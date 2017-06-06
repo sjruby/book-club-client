@@ -1,2 +1,23 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.book-tables {
+  text-align: center;
+}
+
+.table-header {
+  font-weight: bold;
+}

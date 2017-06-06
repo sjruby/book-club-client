@@ -48,7 +48,7 @@ const onLoadUpdateForm = function (event) {
   $('.book-update-form').remove()
   const bookID = $(event.target).parents('tr').attr('data-id')
   const modifyHTML = modifyBookForm({id: bookID})
-  $("body").append(modifyHTML)
+  $(".footer").prepend(modifyHTML)
 }
 
 
