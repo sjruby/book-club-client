@@ -1,9 +1,11 @@
 <div class="book-tables">
-<h1> HANDLEBARS CONNECTED </h1>
+<h1> Book Clubs Listed Below </h1>
 <table id='display-goals'>
   <tr class="table-header">
     <td>Title</td>
     <td>Status</td>
+    <td>Guest Count</td>
+    <td>Location</td>
     <td>Start On</td>
     <td>End On</td>
     <td>Modify</td>
@@ -14,6 +16,8 @@
 <tr data-id={{book.id}}>
   <td id='title-{{book.id}}' class='title'>{{book.title}}</td>
   <td id='status-{{book.id}}'>{{book.status}}</td>
+  <td id='guestCount-{{book.id}}'>{{book.guestCount}}</td>
+  <td id='location-{{book.id}}'>{{book.location}}</td>
   <td id='start-date-{{book.id}}'>{{date book.startDate}}</td>
   <td id='end-date-{{book.id}}'>{{date book.endDate}}</td>
   <td><button type="button" id='modify-{{book.id}}' class='modify-button'>
