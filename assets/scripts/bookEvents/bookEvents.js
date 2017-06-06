@@ -1,7 +1,6 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
-const modifyBookForm = require('../templates/modify-book-club.handlebars')
 
 const getBooks = function () {
   console.log("get books ran!")
@@ -47,10 +46,9 @@ const onLoadUpdateForm = function (event) {
   event.preventDefault()
   $('.book-update-form').remove()
   const bookID = $(event.target).parents('tr').attr('data-id')
-  const modifyHTML = modifyBookForm({id: bookID})
-  $(".footer").prepend(modifyHTML)
+  api.getBook(bookID)
+    .done(ui.onLodadUpdateFormSucess)
 }
-
 
 module.exports = {
   onCreateBook,

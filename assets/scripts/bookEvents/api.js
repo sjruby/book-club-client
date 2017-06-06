@@ -22,6 +22,16 @@ const getBooks = function (data) {
   })
 }
 
+const getBook = function (id) {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiOrigins.production + '/books/' + id,
+    headers: {
+      Authorization: 'Token token=' + store.store.token
+    }
+  })
+}
+
 const deleteBook = function (id) {
   return $.ajax({
     method: 'DELETE',
@@ -47,5 +57,6 @@ module.exports = {
   createBook,
   getBooks,
   deleteBook,
-  updateBook
+  updateBook,
+  getBook
 }

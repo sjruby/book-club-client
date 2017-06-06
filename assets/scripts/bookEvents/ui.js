@@ -2,6 +2,7 @@
 // // const $signInUI = $('#signInMessage')
 const $message = $('#message')
 const booksTable = require('../templates/table-of-books.handlebars')
+const modifyBookForm = require('../templates/modify-book-club.handlebars')
 
 const resetBookForms = function() {
   $(".book-update-form").trigger('reset')
@@ -42,10 +43,19 @@ const updateBookSucess = function (response) {
     resetBookForms()
 }
 
+const onLodadUpdateFormSucess = function (result) {
+
+  const modifyHTML = modifyBookForm({book: result.book})
+  $(".footer").prepend(modifyHTML)
+  console.log(result)
+  console.log(result.book.id)
+}
+
 module.exports = {
   onCreateBookSuccess,
   onError,
   getBooksSuccess,
   deleteGoalSuccess,
-  updateBookSucess
+  updateBookSucess,
+  onLodadUpdateFormSucess
 }

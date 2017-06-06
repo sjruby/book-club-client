@@ -1,14 +1,17 @@
-<div class="book-update-form" data-id={{id}}>
-<p> you are trying to modify: {{id}} </p>
+<div class="book-update-form" data-id={{book.id}}>
+<p> you are trying to modify: {{book.title}} </p>
 <form class='userEvents' id='modify-book-club'>
   <div class="form-group">
-    <input type="text" name="book[title]" placeholder="Enter Book Title">
-    <input type="text" name="book[status]" placeholder="Enter Book Status Here">
-    <input type="text" name="book[location]" placeholder="Enter the address for BookClub">
-    <input type="number" min="0" name="book[guestCount]" placeholder="Enter number of guests">
-    <input type="text" name="book[startDate]" placeholder="Enter Start Date Here" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" title="start date needs to be a DATE : YYYY-MM-DD">
-    <input type="text" name="book[endDate]" placeholder="Enter End Date Here" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" title="end date needs to be a DATE : YYYY-MM-DD">
+    <input type="text" name="book[title]" value={{book.title}}>
+    <input type="text" placeholder="Add a status" name="book[status]" value={{book.status}}>
+    <input type="text" placeholder="Add a location" name="book[location]" value={{book.location}}>
+    <input type="number" min="0" placeholder="Add a guest count" name="book[guestCount]" value={{book.guestCount}}>
+
+    <input type="date" name="book[startDate]" value={{date book.startDate}}>
+    <input type="date" name="book[endDate]" value={{date book.endDate}}>
+
 </div>
   <button type="submit" class="btn btn-default">Update Book</button>
+  <button type="click" class="btn btn-default cancel-update">Cancel Update</button>
 </form>
 </div>
