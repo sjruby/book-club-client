@@ -16,12 +16,12 @@ const limitBooksToCurrentUser = function (data) {
 
 const onCreateBookSuccess = function (response) {
   resetBookForms()
-  $message.text('That worked! You made a book... next up we gotta show it ')
+  $message.text('That worked! You made a book to club out on... next up we gotta show it ')
 }
 
 const getBooksSuccess = function (response) {
   $('.book-tables').remove()
-  $message.text('Check out the books below! ')
+  $message.text('Check out the book clubs below! ')
   const dataForHandlebars = {}
   dataForHandlebars.books = limitBooksToCurrentUser(response.books)
   const booksHTML = booksTable(dataForHandlebars)
@@ -38,7 +38,7 @@ const onError = function (response) {
 }
 
 const updateBookSucess = function (response) {
-  $message.text('Update that book club fool!')
+  $message.text('Updated that book club fool!')
     $('.book-update-form').remove()
     resetBookForms()
 }

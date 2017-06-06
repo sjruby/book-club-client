@@ -1,9 +1,9 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
+const $message = $('#message')
 
 const getBooks = function () {
-  console.log("get books ran!")
   api.getBooks()
     .done(ui.getBooksSuccess)
     .catch(ui.onError)
@@ -36,6 +36,10 @@ const onModifyBook = function (event) {
   const data = getFormFields(this)
 
   data.id = id
+  if(data.book.title === "") {
+    $message.text('come on at least enter a title for the book club! ')
+    return
+  }
 
   api.updateBook(data)
     .done(ui.updateBookSucess)
