@@ -41,11 +41,11 @@ const onModifyBook = function (event) {
   api.updateBook(data)
     .done(ui.updateBookSucess)
     .done(getBooks)
-  console.log("found it ", id)
 }
 
 const onLoadUpdateForm = function (event) {
   event.preventDefault()
+  $('.book-update-form').remove()
   const bookID = $(event.target).parents('tr').attr('data-id')
   const modifyHTML = modifyBookForm({id: bookID})
   $("body").append(modifyHTML)

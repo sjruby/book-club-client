@@ -5,6 +5,7 @@
     <td>Title</td>
     <td>Status</td>
     <td>Start On</td>
+    <td>End On</td>
     <td>Modify</td>
     <td>Delete</td>
   </tr>
@@ -13,7 +14,8 @@
 <tr data-id={{book.id}}>
   <td id='title-{{book.id}}' class='title'>{{book.title}}</td>
   <td id='status-{{book.id}}'>{{book.status}}</td>
-  <td id='start-date-{{book.id}}'>{{book.startDate}}</td>
+  <td id='start-date-{{book.id}}'>{{date book.startDate}}</td>
+  <td id='end-date-{{book.id}}'>{{date book.endDate}}</td>
   <td><button type="button" id='modify-{{book.id}}' class='modify-button'>
     Modify
   </button></td>

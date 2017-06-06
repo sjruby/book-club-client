@@ -33,6 +33,7 @@ const onError = function (response) {
 
 const updateBookSucess = function (response) {
   $message.text('Update that book club fool!')
+    $('.book-update-form').remove()
 }
 
 module.exports = {
