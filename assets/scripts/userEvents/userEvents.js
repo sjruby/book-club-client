@@ -7,16 +7,21 @@ const allClubsPage = require('../templates/allClubs.handlebars')
 const getStartedPage = require('../templates/getStarted.handlebars')
 const newBookForm = require('../templates/add-book-template.handlebars')
 const changePWForm = require('../templates/changePWForm.handlebars')
+const about = require('../templates/about.handlebars')
 
 const onGetStartedClick = function () {
-  console.log('found it')
   $('.root-column').children().remove()
   const getStartedHTML = getStartedPage()
   $('.root-column').append(getStartedHTML)
 }
 
+const onAboutClick = function () {
+  console.log('What do you need to know about')
+  $('.root-column').children().remove()
+  const aboutHTML = about()
+  $('.root-column').append(aboutHTML)
+}
 const onHomeLinkClick = function () {
-  console.log('found HOME')
   $('.root-column').children().remove()
   const welcomeHTML = welcomePage()
   $('.root-column').append(welcomeHTML)
@@ -99,5 +104,6 @@ module.exports = {
   onHomeLinkClick,
   onAllClubsClick,
   onYourClubsClick,
-  onChangePWClick
+  onChangePWClick,
+  onAboutClick
 }
