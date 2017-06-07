@@ -4,10 +4,13 @@ const getFormFields = require('../../../lib/get-form-fields')
 const bookEvents = require('../bookEvents/bookEvents')
 const welcomePage = require('../templates/welcomePage.handlebars')
 const allClubsPage = require('../templates/allClubs.handlebars')
+const getStartedPage = require('../templates/getStarted.handlebars')
 
 const onGetStartedClick = function () {
   console.log('found it')
   $('.root-column').children().remove()
+  const getStartedHTML = getStartedPage()
+  $('.root-column').append(getStartedHTML)
 }
 
 const onHomeLinkClick = function () {
@@ -26,7 +29,7 @@ const onAllClubsClick = function () {
 
 const onSignUp = function (event) {
   event.preventDefault()
-
+  // console.log('its connected!')
   const data = getFormFields(this)
   api.signUp(data)
     .then(ui.onSignUpSuccess)

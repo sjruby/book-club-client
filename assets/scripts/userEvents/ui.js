@@ -5,6 +5,7 @@ const store = require('../store')
 const showSignInUp = require('../templates/create-sign-sign-up.handlebars')
 const pwSignOutForms = require('../templates/add-footer.handlebars')
 const newBookForm = require('../templates/add-book-template.handlebars')
+const signUpSuccessMessage = require('../templates/signUpSucess.handlebars')
 
 
 const resetUserForms = function () {
@@ -14,8 +15,9 @@ const resetUserForms = function () {
 }
 
 const onSignUpSuccess = function (data) {
-    $message.text('You have signed up, now login in below to get started!')
-    resetUserForms()
+  const successHTML = signUpSuccessMessage()
+  $('#get-started').prepend(successHTML)
+  resetUserForms()
 }
 
 const onSignInSuccess = function (data) {
