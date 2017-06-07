@@ -14,29 +14,76 @@
 </head>
 
 <body>
-  <h1 id="message" class=".warning"> Welcome to Wat-R-U-Reading </h1>
-  <div class="welcome-div">
-    <h2> Sign Up </h2>
-    <form class='userEvents' id='sign-up'>
-      <div class="form-group">
-        <input type="text" name="credentials[email]" id="signUpEmail" placeholder="Enter Email">
-        <input type="password" name="credentials[password]" id="signUpPassword" placeholder="Enter Password">
-        <input type="password" name="credentials[password_confirmation]" id="signUpPassword_confirmation" placeholder="Confirm Password">
-      </div>
-      <button type="submit" class="btn btn-default">Sign Up</button>
-    </form>
+  <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container-fluid">
 
-
-    <h2>Sign in</h2>
-    <form class='userEvents' id='sign-in'>
-      <div class="form-group">
-        <input type="text" name="credentials[email]" id="email" placeholder="Enter Email">
-        <input type="password" name="credentials[password]" id="password" placeholder="Enter PW">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#book-club-nav">
+  						<span class="sr-only">Toggle navigation</span>
+              <!-- Glyphacons to make a hamburger -->
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  					</button>
+        <a class="navbar-brand" href="#">Wat-R-U-Reading</a>
       </div>
-      <button type="submit" class="btn btn-default">Sign In</button>
-    </form>
+      <!-- /.navbar-header -->
+
+      <!-- The collapse class tells bootstrap to look for a button inside the nav-bar headre-->
+      <div class="collapse navbar-collapse" id="book-club-nav">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Get Started</a></li>
+          <li><a href="#">All Book Clubs</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <!-- /.navbar -->
+  <hr>
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="welcome-page">
+          <div class="row">
+            <div class="col-sm-12">
+              <hr>
+              <h2>Welcome to Wat-R-U-Reading!</h2>
+              <hr>
+              <p class="lead">Are a book club fiend!!! If so this is the web site for you.</p>
+              <hr>
+              <p><img class="img-responsive" src="http://placehold.it/1200x600" alt="siteLOG goes here"></p>
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <h4>Wat-R-U-Reading Helps You Do:</h4>
+              <ul>
+                <li>Post info about Book Clubs you host</li>
+                <li>Track book clubs you host</li>
+                <li>Look at other book clubs being hosted</li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <h4>Coming Soon:</h4>
+              <ul>
+                <li>RSVP to book clubs near you</li>
+                <li>Search for book clubs in your area</li>
+                <li>Track online RSVPS on Wat-R-U-Reading</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
+  </div>
+  </div>
 </body>
 
 </html>
