@@ -57,6 +57,8 @@ const onChangePW = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
+
+  console.log("You tried to sign out")
   api.signOut()
     .done(ui.signOutSuccess)
     .catch(ui.onError)

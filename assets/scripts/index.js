@@ -13,12 +13,12 @@ $(() => {
 $(document).on('click', '.getStartedNav', userEvents.onGetStartedClick)
 $(document).on('click', '.home-link-nav', userEvents.onHomeLinkClick)
 $(document).on('click', '.allClubsNav', userEvents.onAllClubsClick)
+$(document).on('click', '.signOut', userEvents.onSignOut)
 
 
 $(document).on('submit', '#sign-up', userEvents.onSignUp)
 $(document).on('submit', '#sign-in', userEvents.onSignIn)
 $(document).on('submit', '#change-pw', userEvents.onChangePW)
-$(document).on('submit', '#sign-out', userEvents.onSignOut)
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')

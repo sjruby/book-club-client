@@ -7,6 +7,8 @@ const pwSignOutForms = require('../templates/add-footer.handlebars')
 const newBookForm = require('../templates/add-book-template.handlebars')
 const signUpSuccessMessage = require('../templates/signUpSucess.handlebars')
 const signedInNav = require('../templates/navSignedIn.handlebars')
+const notSignedInNav = require('../templates/navNotSignedIn.handlebars')
+const welcomePage = require('../templates/welcomePage.handlebars')
 
 
 const resetUserForms = function () {
@@ -25,13 +27,9 @@ const onSignInSuccess = function (data) {
   store.store = data.user
   resetUserForms()
   $('#not-signed-in-nav').remove()
-
   const signedInNavHTML = signedInNav()
-
   $('body').append(signedInNavHTML)
-
   $('.root-column').children().remove()
-
   const newBookHTML = newBookForm()
   $('.root-column').append(newBookHTML)
 }
@@ -44,12 +42,12 @@ const onChangePWSuccess = () => {
 }
 
 const signOutSuccess = () => {
-  $message.text('You left meeeeeee WHYYYYY')
-  const signInHTML = showSignInUp()
-  resetUserForms()
-  $('body').append(signInHTML)
-  $('.footer').remove()
-  $('.add-a-book').remove()
+  $('#signed-in-nav').remove()
+  const notSignedInNavHTML = notSignedInNav()
+  $('body').append(notSignedInNavHTML)
+  $('.root-column').children().remove()
+  const welcomePageHTML = welcomePage()
+  $('.root-column').append(welcomePageHTML)
 }
 
 const onError = function (response) {
