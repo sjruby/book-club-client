@@ -21,12 +21,10 @@ const onCreateBookSuccess = function (response) {
 
 const getBooksSuccess = function (response) {
   $('.book-tables').remove()
-  $message.text('Check out the book clubs below! ')
   const dataForHandlebars = {}
   dataForHandlebars.books = limitBooksToCurrentUser(response.books)
   const booksHTML = booksTable(dataForHandlebars)
-  console.log(response)
-  $('.footer').prepend(booksHTML)
+  $('.root-column').append(booksHTML)
 }
 
 const deleteGoalSuccess = function (response) {
@@ -46,7 +44,7 @@ const updateBookSucess = function (response) {
 const onLodadUpdateFormSucess = function (result) {
 
   const modifyHTML = modifyBookForm({book: result.book})
-  $(".footer").prepend(modifyHTML)
+  $('.root-column').append(modifyHTML)
   console.log(result)
   console.log(result.book.id)
 }

@@ -6,6 +6,7 @@ const showSignInUp = require('../templates/create-sign-sign-up.handlebars')
 const pwSignOutForms = require('../templates/add-footer.handlebars')
 const newBookForm = require('../templates/add-book-template.handlebars')
 const signUpSuccessMessage = require('../templates/signUpSucess.handlebars')
+const signedInNav = require('../templates/navSignedIn.handlebars')
 
 
 const resetUserForms = function () {
@@ -23,12 +24,16 @@ const onSignUpSuccess = function (data) {
 const onSignInSuccess = function (data) {
   store.store = data.user
   resetUserForms()
-  $('.welcome-div').remove()
-  $message.text('You have signed in YAY!')
-  const changePWHTML = pwSignOutForms()
+  $('#not-signed-in-nav').remove()
+
+  const signedInNavHTML = signedInNav()
+
+  $('body').append(signedInNavHTML)
+
+  $('.root-column').children().remove()
+
   const newBookHTML = newBookForm()
-  $('body').append(newBookHTML)
-  $('body').append(changePWHTML)
+  $('.root-column').append(newBookHTML)
 }
 
 const onChangePWSuccess = () => {
