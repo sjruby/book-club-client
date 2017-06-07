@@ -5,6 +5,7 @@ const bookEvents = require('../bookEvents/bookEvents')
 const welcomePage = require('../templates/welcomePage.handlebars')
 const allClubsPage = require('../templates/allClubs.handlebars')
 const getStartedPage = require('../templates/getStarted.handlebars')
+const newBookForm = require('../templates/add-book-template.handlebars')
 
 const onGetStartedClick = function () {
   console.log('found it')
@@ -25,6 +26,14 @@ const onAllClubsClick = function () {
   $('.root-column').children().remove()
   const allClubsHTML = allClubsPage()
   $('.root-column').append(allClubsHTML)
+}
+
+const onYourClubsClick = function () {
+  console.log('trying to find your clubs')
+  $('.root-column').children().remove()
+  const newBookHTML = newBookForm()
+  $('.root-column').append(newBookHTML)
+  bookEvents.getBooks()
 }
 
 const onSignUp = function (event) {
@@ -79,5 +88,6 @@ module.exports = {
   onCloseModal,
   onGetStartedClick,
   onHomeLinkClick,
-  onAllClubsClick
+  onAllClubsClick,
+  onYourClubsClick
 }

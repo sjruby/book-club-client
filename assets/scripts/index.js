@@ -14,6 +14,9 @@ $(document).on('click', '.getStartedNav', userEvents.onGetStartedClick)
 $(document).on('click', '.home-link-nav', userEvents.onHomeLinkClick)
 $(document).on('click', '.allClubsNav', userEvents.onAllClubsClick)
 $(document).on('click', '.signOut', userEvents.onSignOut)
+$(document).on('click', '.yourBookClubs', userEvents.onYourClubsClick)
+
+
 
 
 $(document).on('submit', '#sign-up', userEvents.onSignUp)
