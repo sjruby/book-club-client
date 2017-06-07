@@ -22,7 +22,7 @@ const onCreateBook = function (event) {
 
 const onDeleteBook = function (event) {
   event.preventDefault()
-  const id = $(event.target).parents('tr').attr('data-id')
+  const id = $(event.target).parents('div').attr('data-id')
 
   api.deleteBook(id)
     .done(ui.deleteGoalSuccess)
