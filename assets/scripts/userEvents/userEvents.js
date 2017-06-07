@@ -3,6 +3,7 @@ const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 const bookEvents = require('../bookEvents/bookEvents')
 const welcomePage = require('../templates/welcomePage.handlebars')
+const allClubsPage = require('../templates/allClubs.handlebars')
 
 const onGetStartedClick = function () {
   console.log('found it')
@@ -14,6 +15,13 @@ const onHomeLinkClick = function () {
   $('.root-column').children().remove()
   const welcomeHTML = welcomePage()
   $('.root-column').append(welcomeHTML)
+}
+
+const onAllClubsClick = function () {
+  console.log('Why do you want to see all CLUBS')
+  $('.root-column').children().remove()
+  const allClubsHTML = allClubsPage()
+  $('.root-column').append(allClubsHTML)
 }
 
 const onSignUp = function (event) {
@@ -65,5 +73,6 @@ module.exports = {
   onSignOut,
   onCloseModal,
   onGetStartedClick,
-  onHomeLinkClick
+  onHomeLinkClick,
+  onAllClubsClick
 }
