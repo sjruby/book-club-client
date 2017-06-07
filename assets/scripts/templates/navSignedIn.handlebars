@@ -17,11 +17,26 @@
     <!-- The collapse class tells bootstrap to look for a button inside the nav-bar headre-->
     <div class="collapse navbar-collapse" id="book-club-nav">
       <ul class="nav navbar-nav">
-        <li><a href="#" class="yourBookClubs">Your Book Clubs!</a></li>
+        <li role="presentation" class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              Your Book Clubs! <span class="caret"></span>
+            </a>
+          <ul class="dropdown-menu">
+            <li><a href="#" class="newBookClub">Make a Book-Club</a></li>
+            <li><a href="#" class="yourBookClubs">List of Clubs!</a></li>
+          </ul>
+        </li>
         <li><a href="#" class="allClubsNav">All Book Clubs(Coming Soon)</a></li>
         <li><a href="#" class="aboutNav">About</a></li>
-        <li><a href="#" class="changePW">Change Password</a></li>
-        <li><a href="#" class="signOut">Sign Out</a></li>
+        <li role="presentation" class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              Account Managment <span class="caret"></span>
+            </a>
+          <ul class="dropdown-menu">
+            <li><a href="#" class="changePW">Change Password</a></li>
+            <li><a href="#" class="signOut">Sign Out</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
     <!-- /.navbar-collapse -->

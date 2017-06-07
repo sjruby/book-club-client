@@ -15,7 +15,6 @@ const onCreateBook = function (event) {
   const data = getFormFields(this)
 
   api.createBook(data)
-    .done(ui.onCreateBookSuccess)
     .done(getBooks)
     .catch(ui.onError)
 }

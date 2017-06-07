@@ -5,7 +5,7 @@ const bookEvents = require('../bookEvents/bookEvents')
 const welcomePage = require('../templates/welcomePage.handlebars')
 const allClubsPage = require('../templates/allClubs.handlebars')
 const getStartedPage = require('../templates/getStarted.handlebars')
-const newBookForm = require('../templates/add-book-template.handlebars')
+const newBookForm = require('../templates/createNewClub.handlebars')
 const changePWForm = require('../templates/changePWForm.handlebars')
 const about = require('../templates/about.handlebars')
 
@@ -28,18 +28,21 @@ const onHomeLinkClick = function () {
 }
 
 const onAllClubsClick = function () {
-  console.log('Why do you want to see all CLUBS')
   $('.root-column').children().remove()
   const allClubsHTML = allClubsPage()
   $('.root-column').append(allClubsHTML)
 }
 
 const onYourClubsClick = function () {
-  console.log('trying to find your clubs')
   $('.root-column').children().remove()
+  bookEvents.getBooks()
+}
+
+const onMakeClubClick = function () {
+  console.log('What do you need to make clubs for anyway!')
+    $('.root-column').children().remove()
   const newBookHTML = newBookForm()
   $('.root-column').append(newBookHTML)
-  bookEvents.getBooks()
 }
 
 const onChangePWClick = function() {
@@ -105,5 +108,6 @@ module.exports = {
   onAllClubsClick,
   onYourClubsClick,
   onChangePWClick,
-  onAboutClick
+  onAboutClick,
+  onMakeClubClick
 }
