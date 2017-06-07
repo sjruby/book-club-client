@@ -2,6 +2,19 @@ const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 const bookEvents = require('../bookEvents/bookEvents')
+const welcomePage = require('../templates/welcomePage.handlebars')
+
+const onGetStartedClick = function () {
+  console.log('found it')
+  $('.root-column').children().remove()
+}
+
+const onHomeLinkClick = function () {
+  console.log('found HOME')
+  $('.root-column').children().remove()
+  const welcomeHTML = welcomePage()
+  $('.root-column').append(welcomeHTML)
+}
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -50,5 +63,7 @@ module.exports = {
   onSignIn,
   onChangePW,
   onSignOut,
-  onCloseModal
+  onCloseModal,
+  onGetStartedClick,
+  onHomeLinkClick
 }
