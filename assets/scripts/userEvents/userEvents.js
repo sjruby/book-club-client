@@ -6,6 +6,7 @@ const welcomePage = require('../templates/welcomePage.handlebars')
 const allClubsPage = require('../templates/allClubs.handlebars')
 const getStartedPage = require('../templates/getStarted.handlebars')
 const newBookForm = require('../templates/add-book-template.handlebars')
+const changePWForm = require('../templates/changePWForm.handlebars')
 
 const onGetStartedClick = function () {
   console.log('found it')
@@ -36,6 +37,13 @@ const onYourClubsClick = function () {
   bookEvents.getBooks()
 }
 
+const onChangePWClick = function() {
+  console.log("test PW CHange")
+  $('.root-column').children().remove()
+  const changePWHTML = changePWForm()
+  $('.root-column').append(changePWHTML)
+}
+
 const onSignUp = function (event) {
   event.preventDefault()
   // console.log('its connected!')
@@ -59,9 +67,10 @@ const onChangePW = function (event) {
   event.preventDefault()
 
   const data = getFormFields(this)
+  // console.log('change PW runs....')
   api.changePassword(data)
     .then(ui.onChangePWSuccess)
-    .catch(ui.onPWError)
+    .catch(ui.onError)
 }
 
 const onSignOut = function (event) {
@@ -89,5 +98,6 @@ module.exports = {
   onGetStartedClick,
   onHomeLinkClick,
   onAllClubsClick,
-  onYourClubsClick
+  onYourClubsClick,
+  onChangePWClick
 }

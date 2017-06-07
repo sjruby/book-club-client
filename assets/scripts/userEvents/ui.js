@@ -9,12 +9,13 @@ const signUpSuccessMessage = require('../templates/signUpSucess.handlebars')
 const signedInNav = require('../templates/navSignedIn.handlebars')
 const notSignedInNav = require('../templates/navNotSignedIn.handlebars')
 const welcomePage = require('../templates/welcomePage.handlebars')
+const changePWSucessMessage = require('../templates/changePWSucess.handlebars')
 
 
 const resetUserForms = function () {
   $('#sign-up').trigger('reset')
   $('#sign-in').trigger('reset')
-  $('#change-password').trigger('reset')
+  $('#change-pw').trigger('reset')
 }
 
 const onSignUpSuccess = function (data) {
@@ -35,10 +36,10 @@ const onSignInSuccess = function (data) {
 }
 
 const onChangePWSuccess = () => {
-  $message.text('You succesfully changed your PW...now play!')
-    $('#changePW').modal('hide')
-    $('#change-pw')[0].reset()
-    $('#changePWMessage').text('')
+  $('#change-pw-sucess').remove()
+  const successHTML = changePWSucessMessage()
+  $('#change-pw-form').prepend(successHTML)
+  resetUserForms()
 }
 
 const signOutSuccess = () => {

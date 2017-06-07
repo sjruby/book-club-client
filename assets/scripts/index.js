@@ -10,15 +10,15 @@ $(() => {
   setAPIOrigin(location, config)
 })
 
+//  Nav bar Click handlers
 $(document).on('click', '.getStartedNav', userEvents.onGetStartedClick)
 $(document).on('click', '.home-link-nav', userEvents.onHomeLinkClick)
 $(document).on('click', '.allClubsNav', userEvents.onAllClubsClick)
 $(document).on('click', '.signOut', userEvents.onSignOut)
 $(document).on('click', '.yourBookClubs', userEvents.onYourClubsClick)
+$(document).on('click', '.changePW', userEvents.onChangePWClick)
 
-
-
-
+// User form click Handlers
 $(document).on('submit', '#sign-up', userEvents.onSignUp)
 $(document).on('submit', '#sign-in', userEvents.onSignIn)
 $(document).on('submit', '#change-pw', userEvents.onChangePW)
@@ -28,7 +28,7 @@ $(document).on('submit', '#change-pw', userEvents.onChangePW)
 const closeBookUpdate = function() {
   $('.book-update-form').remove()
 }
-
+// Book form Click handlers
 $(document).on('submit', '#create-new-book', bookEvents.onCreateBook)
 $(document).on('submit', '#modify-book-club', bookEvents.onModifyBook)
 $(document).on('click', '.delete-button', bookEvents.onDeleteBook)
