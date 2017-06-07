@@ -1,0 +1,40 @@
+<div id="all-book-clubs">
+  <hr>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class='book-managment-header'>
+      <h2>Manage your Book Clubs Below: <small> list filter feature coming soon!</small></h2>
+
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="col-sm-12 book-club-list">
+      <h4> List of book clubs </h4>
+        {{#each books as |book|}}
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"> {{book.title}} </h3>
+          </div>
+          <div class="panel-body">
+            <strong># of Guests:</strong> {{book.guestCount}} <br/>
+            <strong>Location:</strong> {{book.location}} <br/>
+            <strong>Starts On:</strong> {{date book.startDate}} <br/>
+            <strong>Ends On:</strong> {{date book.endDate}} <br/>
+            <button type="button" id='modify-{{book.id}}' class='modify-button btn btn-default'>
+              Modify
+            </button>
+            <button type="button" id='delete-{{book.id}}' class='delete-button btn btn-default'>
+              Delete
+            </button>
+          </div>
+
+        </div>
+          <hr>
+        {{/each}}
+    </div>
+</div>
+</div>

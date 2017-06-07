@@ -3,6 +3,7 @@
 const $message = $('#message')
 const booksTable = require('../templates/table-of-books.handlebars')
 const modifyBookForm = require('../templates/modify-book-club.handlebars')
+const youBookClubs = require('../templates/yourClubs.handlebars')
 
 const resetBookForms = function() {
   $(".book-update-form").trigger('reset')
@@ -20,10 +21,10 @@ const onCreateBookSuccess = function (response) {
 }
 
 const getBooksSuccess = function (response) {
-  $('.book-tables').remove()
+  $('.root-column').children().remove()
   const dataForHandlebars = {}
   dataForHandlebars.books = limitBooksToCurrentUser(response.books)
-  const booksHTML = booksTable(dataForHandlebars)
+  const booksHTML = youBookClubs(dataForHandlebars)
   $('.root-column').append(booksHTML)
 }
 

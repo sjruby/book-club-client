@@ -30,9 +30,6 @@ const onSignInSuccess = function (data) {
   $('#not-signed-in-nav').remove()
   const signedInNavHTML = signedInNav()
   $('body').append(signedInNavHTML)
-  $('.root-column').children().remove()
-  const newBookHTML = newBookForm()
-  $('.root-column').append(newBookHTML)
 }
 
 const onChangePWSuccess = () => {
