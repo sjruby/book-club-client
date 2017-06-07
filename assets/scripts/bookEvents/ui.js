@@ -2,7 +2,7 @@
 // // const $signInUI = $('#signInMessage')
 const $message = $('#message')
 const booksTable = require('../templates/table-of-books.handlebars')
-const modifyBookForm = require('../templates/modify-book-club.handlebars')
+const modifyBookForm = require('../templates/modifyBookClub.handlebars')
 const youBookClubs = require('../templates/yourClubs.handlebars')
 
 const resetBookForms = function() {
@@ -43,7 +43,7 @@ const updateBookSucess = function (response) {
 }
 
 const onLodadUpdateFormSucess = function (result) {
-
+  $('.root-column').children().remove()
   const modifyHTML = modifyBookForm({book: result.book})
   $('.root-column').append(modifyHTML)
   console.log(result)

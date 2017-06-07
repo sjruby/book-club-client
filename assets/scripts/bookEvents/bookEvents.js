@@ -35,6 +35,7 @@ const onModifyBook = function (event) {
   const data = getFormFields(this)
 
   data.id = id
+
   if(data.book.title === "") {
     $message.text('come on at least enter a title for the book club! ')
     return
@@ -47,8 +48,9 @@ const onModifyBook = function (event) {
 
 const onLoadUpdateForm = function (event) {
   event.preventDefault()
-  $('.book-update-form').remove()
-  const bookID = $(event.target).parents('tr').attr('data-id')
+  console.log('you found the funciton!')
+
+  const bookID = $(event.target).parents('div').attr('data-id')
   api.getBook(bookID)
     .done(ui.onLodadUpdateFormSucess)
 }
