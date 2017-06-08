@@ -1,13 +1,14 @@
 // const $signUpUI = $('#signUpMessage')
 // // const $signInUI = $('#signInMessage')
 const $message = $('#message')
-const booksTable = require('../templates/table-of-books.handlebars')
 const modifyBookForm = require('../templates/modifyBookClub.handlebars')
 const youBookClubs = require('../templates/yourClubs.handlebars')
+const bookFailureTemplate = require('../templates/bookFailure.handlebars')
+const createModifyTemplate = require('../templates/createModifyError.handlebars')
 
-const resetBookForms = function() {
-  $(".book-update-form").trigger('reset')
-  $("#create-new-book").trigger('reset')
+const resetBookForms = function () {
+  $('.book-update-form').trigger('reset')
+  $('#create-new-book').trigger('reset')
 }
 const limitBooksToCurrentUser = function (data) {
   const userOnlyData = []
@@ -36,18 +37,23 @@ const getBooksSuccess = function (response) {
   $('.root-column').append(booksHTML)
 }
 
-const deleteGoalSuccess = function (response) {
-  $message.text('Nobody likes that book anyway ')
+const bookFailure = function (response) {
+  $('#book-message').remove()
+  $('.sucess-message').remove()
+  const failureHTML = bookFailureTemplate()
+  $('.root-column').prepend(failureHTML)
 }
 
-const onError = function (response) {
-  $message.text('That bombed...as a devolper I have determined it was user error :) ')
+const onCreateModifyError = function (response) {
+  $('#book-message').remove()
+  $('.sucess-message').remove()
+  const failureHTML = createModifyTemplate()
+  $('.root-column').prepend(failureHTML)
 }
 
 const updateBookSucess = function (response) {
-  $message.text('Updated that book club fool!')
-    $('.book-update-form').remove()
-    resetBookForms()
+  $('.book-update-form').remove()
+  resetBookForms()
 }
 
 const onLodadUpdateFormSucess = function (result) {
@@ -60,9 +66,9 @@ const onLodadUpdateFormSucess = function (result) {
 
 module.exports = {
   onCreateBookSuccess,
-  onError,
+  bookFailure,
   getBooksSuccess,
-  deleteGoalSuccess,
   updateBookSucess,
-  onLodadUpdateFormSucess
+  onLodadUpdateFormSucess,
+  onCreateModifyError
 }

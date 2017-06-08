@@ -6,7 +6,7 @@ const $message = $('#message')
 const getBooks = function () {
   api.getBooks()
     .done(ui.getBooksSuccess)
-    .catch(ui.onError)
+    .catch(ui.bookFailure)
 }
 
 const onCreateBook = function (event) {
@@ -16,7 +16,7 @@ const onCreateBook = function (event) {
 
   api.createBook(data)
     .done(getBooks)
-    .catch(ui.onError)
+    .catch(ui.onCreateModifyError)
 }
 
 const onDeleteBook = function (event) {
@@ -24,9 +24,8 @@ const onDeleteBook = function (event) {
   const id = $(event.target).parents('div').attr('data-id')
 
   api.deleteBook(id)
-    .done(ui.deleteGoalSuccess)
     .done(getBooks)
-    .catch(ui.failure)
+    .catch(ui.bookFailure)
 }
 
 const onModifyBook = function (event) {
@@ -36,7 +35,7 @@ const onModifyBook = function (event) {
 
   data.id = id
 
-  if(data.book.title === "") {
+  if (data.book.title === '') {
     $message.text('come on at least enter a title for the book club! ')
     return
   }
@@ -44,6 +43,7 @@ const onModifyBook = function (event) {
   api.updateBook(data)
     .done(ui.updateBookSucess)
     .done(getBooks)
+    .catch(ui.onCreateModifyError)
 }
 
 const onLoadUpdateForm = function (event) {
@@ -53,6 +53,7 @@ const onLoadUpdateForm = function (event) {
   const bookID = $(event.target).parents('div').attr('data-id')
   api.getBook(bookID)
     .done(ui.onLodadUpdateFormSucess)
+    .catch(ui.bookFailure)
 }
 
 module.exports = {
