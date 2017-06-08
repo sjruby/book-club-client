@@ -18,10 +18,11 @@
               <h2 class="panel-title"> {{book.title}} </h2>
             </div>
             <div class="panel-body" data-id={{book.id}}>
-              <p class="lead">{{book.description}} </p>
+              <p class="lead">{{breaklines book.description}} </p>
               <p>
+              <strong>Location:</strong> <br> {{breaklines book.location}} <br/>
+              <br>
               <strong># of Guests:</strong> {{book.guestCount}} <br/>
-              <strong>Location:</strong> {{book.location}} <br/>
               <strong>Starts On:</strong> {{date book.startDate}} <br/>
               <strong>Ends On:</strong> {{date book.endDate}} <br/>
               <strong>Last Updated:</strong> {{date book.updatedAt}} <br/>
