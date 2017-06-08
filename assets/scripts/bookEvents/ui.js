@@ -37,6 +37,7 @@ const getBooksSuccess = function (response) {
   $('.root-column').children().remove()
   const dataForHandlebars = {}
   dataForHandlebars.books = limitBooksToCurrentUser(response.books)
+  dataForHandlebars.books.sort(compareUpdateDates)
   const booksHTML = youBookClubs(dataForHandlebars)
   $('.root-column').append(booksHTML)
 }
@@ -45,6 +46,7 @@ const showOtherUsersBooks = function (response) {
   $('.root-column').children().remove()
   const dataForHandlebars = {}
   dataForHandlebars.books = limitBooksToOtherUsers(response.books)
+  dataForHandlebars.books.sort(compareUpdateDates)
   const booksHTML = otherClubs(dataForHandlebars)
   $('.root-column').append(booksHTML)
 }
