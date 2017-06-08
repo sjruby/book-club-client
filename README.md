@@ -10,15 +10,20 @@
 
 # Dependincies
 
+Install with `npm install`.
+
+-   [`express`](http://expressjs.com/)
+-   [`mongoose`](http://mongoosejs.com/)
+
+
 Can be installed with npm install and include:
 
-- bable
-- bootstrap
-- eslint
-- grunt
-- handlebars
-- node
-- webpack
+- [`bable`](https://www.npmjs.com/package/Babel)
+- [`bootstrap`](http://getbootstrap.com/)
+- [`eslint`](http://eslint.org/)
+- [`grunt`](https://gruntjs.com/)
+- [`handlebars`](http://handlebarsjs.com/)
+- [`webpack`](https://webpack.github.io/)
 
 # Bookclub Manager
 The purpose of this app is to track all the book-clubs that you are planing on hosting.  In the alpha version it can only be used to record key information about the book club you will host.  There is not social aspect
