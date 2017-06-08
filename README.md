@@ -12,12 +12,6 @@
 
 Install with `npm install`.
 
--   [`express`](http://expressjs.com/)
--   [`mongoose`](http://mongoosejs.com/)
-
-
-Can be installed with npm install and include:
-
 - [`bable`](https://www.npmjs.com/package/Babel)
 - [`bootstrap`](http://getbootstrap.com/)
 - [`eslint`](http://eslint.org/)
