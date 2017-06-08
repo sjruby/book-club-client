@@ -18,6 +18,7 @@ $(document).on('click', '.yourBookClubs', userEvents.onYourClubsClick)
 $(document).on('click', '.changePW', userEvents.onChangePWClick)
 $(document).on('click', '.aboutNav', userEvents.onAboutClick)
 $(document).on('click', '.newBookClub', userEvents.onMakeClubClick)
+$(document).on('click', '.everyoneElsesClubs', userEvents.onEveryoneElsesClubsClick)
 
 // User form click Handlers
 $(document).on('submit', '#sign-up', userEvents.onSignUp)

@@ -9,6 +9,11 @@ const getBooks = function () {
     .catch(ui.bookFailure)
 }
 
+const getEveryoneElsesBooks = function () {
+  api.getBooks()
+    .done(ui.showOtherUsersBooks)
+    .catch(ui.bookFailure)
+}
 const onCreateBook = function (event) {
   event.preventDefault()
 
@@ -48,7 +53,6 @@ const onModifyBook = function (event) {
 
 const onLoadUpdateForm = function (event) {
   event.preventDefault()
-  console.log('you found the funciton!')
 
   const bookID = $(event.target).parents('div').attr('data-id')
   api.getBook(bookID)
@@ -61,5 +65,6 @@ module.exports = {
   getBooks,
   onDeleteBook,
   onModifyBook,
-  onLoadUpdateForm
+  onLoadUpdateForm,
+  getEveryoneElsesBooks
 }

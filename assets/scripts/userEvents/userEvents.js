@@ -15,8 +15,12 @@ const onGetStartedClick = function () {
   $('.root-column').append(getStartedHTML)
 }
 
+const onEveryoneElsesClubsClick = function () {
+  $('.root-column').children().remove()
+  bookEvents.getEveryoneElsesBooks()
+}
+
 const onAboutClick = function () {
-  console.log('What do you need to know about')
   $('.root-column').children().remove()
   const aboutHTML = about()
   $('.root-column').append(aboutHTML)
@@ -39,14 +43,12 @@ const onYourClubsClick = function () {
 }
 
 const onMakeClubClick = function () {
-  console.log('What do you need to make clubs for anyway!')
   $('.root-column').children().remove()
   const newBookHTML = newBookForm()
   $('.root-column').append(newBookHTML)
 }
 
 const onChangePWClick = function () {
-  console.log('test PW CHange')
   $('.root-column').children().remove()
   const changePWHTML = changePWForm()
   $('.root-column').append(changePWHTML)
@@ -54,7 +56,6 @@ const onChangePWClick = function () {
 
 const onSignUp = function (event) {
   event.preventDefault()
-  // console.log('its connected!')
   const data = getFormFields(this)
   api.signUp(data)
     .then(ui.onSignUpSuccess)
@@ -75,7 +76,6 @@ const onChangePW = function (event) {
   event.preventDefault()
 
   const data = getFormFields(this)
-  // console.log('change PW runs....')
   api.changePassword(data)
     .then(ui.onChangePWSuccess)
     .catch(ui.onError)
@@ -83,31 +83,23 @@ const onChangePW = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-
-  console.log('You tried to sign out')
   api.signOut()
     .done(ui.signOutSuccess)
     .catch(ui.onError)
 }
 
-const onCloseModal = function () {
-  $('#myForm')[0].reset()
-  $('#change-pw')[0].reset()
-  $('#newGameMessage').text('')
-  $('#changePWMessage').text('')
-}
 
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePW,
   onSignOut,
-  onCloseModal,
   onGetStartedClick,
   onHomeLinkClick,
   onAllClubsClick,
   onYourClubsClick,
   onChangePWClick,
   onAboutClick,
-  onMakeClubClick
+  onMakeClubClick,
+  onEveryoneElsesClubsClick
 }

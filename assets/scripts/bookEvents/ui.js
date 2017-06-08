@@ -5,14 +5,22 @@ const modifyBookForm = require('../templates/modifyBookClub.handlebars')
 const youBookClubs = require('../templates/yourClubs.handlebars')
 const bookFailureTemplate = require('../templates/bookFailure.handlebars')
 const createModifyTemplate = require('../templates/createModifyError.handlebars')
+const otherClubs = require('../templates/everyoneElsesClubs.handlebars')
 
 const resetBookForms = function () {
   $('.book-update-form').trigger('reset')
   $('#create-new-book').trigger('reset')
 }
+
 const limitBooksToCurrentUser = function (data) {
   const userOnlyData = []
   data.forEach((e) => { if (e.editable) { userOnlyData.push(e) } })
+  return userOnlyData
+}
+
+const limitBooksToOtherUsers = function (data) {
+  const userOnlyData = []
+  data.forEach((e) => { if (!e.editable) { userOnlyData.push(e) } })
   return userOnlyData
 }
 
@@ -29,11 +37,15 @@ const getBooksSuccess = function (response) {
   $('.root-column').children().remove()
   const dataForHandlebars = {}
   dataForHandlebars.books = limitBooksToCurrentUser(response.books)
-  console.log(dataForHandlebars.books)
-
-  console.log(dataForHandlebars.books.sort(compareUpdateDates))
-
   const booksHTML = youBookClubs(dataForHandlebars)
+  $('.root-column').append(booksHTML)
+}
+
+const showOtherUsersBooks = function (response) {
+  $('.root-column').children().remove()
+  const dataForHandlebars = {}
+  dataForHandlebars.books = limitBooksToOtherUsers(response.books)
+  const booksHTML = otherClubs(dataForHandlebars)
   $('.root-column').append(booksHTML)
 }
 
@@ -60,8 +72,6 @@ const onLodadUpdateFormSucess = function (result) {
   $('.root-column').children().remove()
   const modifyHTML = modifyBookForm({book: result.book})
   $('.root-column').append(modifyHTML)
-  console.log(result)
-  console.log(result.book.id)
 }
 
 module.exports = {
@@ -70,5 +80,6 @@ module.exports = {
   getBooksSuccess,
   updateBookSucess,
   onLodadUpdateFormSucess,
-  onCreateModifyError
+  onCreateModifyError,
+  showOtherUsersBooks
 }

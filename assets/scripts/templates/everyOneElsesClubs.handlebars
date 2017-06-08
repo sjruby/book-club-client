@@ -1,0 +1,45 @@
+<div id="all-book-clubs">
+  <hr>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class='book-managment-header'>
+      <h2>Wat-R-U-Reading: Book Clubs to Attend</h2>
+      <p> Features to search other book clubs coming soon! </p>
+      <p> RSVP Features coming soon! </p>
+      <p>The list will be sorted to the most recently updated bookclub</p>
+
+    </div>
+
+    <div class="col-sm-12 book-club-list">
+        {{#if books}}
+          <h4> List of book clubs </h4>
+          {{#each books as |book|}}
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h2 class="panel-title"> {{book.title}} </h2>
+            </div>
+            <div class="panel-body" data-id={{book.id}}>
+              <p class="lead">{{breaklines book.description}} </p>
+              <p>
+              <strong>Location:</strong> <br> {{breaklines book.location}} <br/>
+              <br>
+              <strong># of Guests:</strong> {{book.guestCount}} <br/>
+              <strong>Starts On:</strong> {{date book.startDate}} <br/>
+              <strong>Ends On:</strong> {{date book.endDate}} <br/>
+              <strong>Last Updated:</strong> {{date book.updatedAt}} <br/>
+            </p>
+              <button type="button" class='btn btn-primary' disabled="disabled">
+                RSVP - Coming Soon!
+              </button>
+            </div>
+
+          </div>
+            <hr>
+          {{/each}}
+        {{else}}
+          <h4 class='warning'> Uh-Oh looks like you're the only one with book clubs! </h4>
+        {{/if}}
+
+    </div>
+</div>
+</div>
