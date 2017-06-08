@@ -20,10 +20,18 @@ const onCreateBookSuccess = function (response) {
   $message.text('That worked! You made a book to club out on... next up we gotta show it ')
 }
 
+const compareUpdateDates = function (book1, book2) {
+  return new Date(book2.updatedAt) - new Date(book1.updatedAt)
+}
+
 const getBooksSuccess = function (response) {
   $('.root-column').children().remove()
   const dataForHandlebars = {}
   dataForHandlebars.books = limitBooksToCurrentUser(response.books)
+  console.log(dataForHandlebars.books)
+
+  console.log(dataForHandlebars.books.sort(compareUpdateDates))
+
   const booksHTML = youBookClubs(dataForHandlebars)
   $('.root-column').append(booksHTML)
 }

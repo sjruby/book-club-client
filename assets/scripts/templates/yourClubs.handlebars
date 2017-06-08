@@ -5,7 +5,7 @@
       <div class='book-managment-header'>
       <h2>Wat-R-U-Reading: Your book clubs!</h2>
       <p> Features to search your book clubs coming soon! </p>
-      <p> The list will be sorted to the most recently created bookclub </p>
+      <p> The list will be sorted to the most recently updated bookclub </p>
 
     </div>
 
@@ -23,6 +23,7 @@
             <strong>Location:</strong> {{book.location}} <br/>
             <strong>Starts On:</strong> {{date book.startDate}} <br/>
             <strong>Ends On:</strong> {{date book.endDate}} <br/>
+            <strong>Last Updated:</strong> {{date book.updatedAt}} <br/>
           </p>
             <button type="button" id='modify-{{book.id}}' class='modify-button btn btn-primary'>
               Modify

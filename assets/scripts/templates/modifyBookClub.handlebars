@@ -3,45 +3,33 @@
       <div class="well" data-id={{book.id}}>
         <h2> You are modifiying the record for : <small>{{book.title}}</small> </h2>
         <form class='bookEvents' id='modify-book-club'>
-          <div class="form-group">
             <div class="form-group">
               <label for="title">Book Title</label>
-              <input type="text"  value="{{book.title}}" name="book[title]">
+              <input type="text" class="form-control"  value="{{book.title}}" name="book[title]">
             </div>
             <div class="form-group">
               <label for="description">Book Club Description</label>
-              <br />
-              <textarea name="book[description]" rows=3 cols=30 >
-                {{book.description}}
-              </textarea>
-
-              <!-- <input type="text" name="book[description]" placeholder="Enter Bookclub Description Here"> -->
+              <textarea class='form-control' name="book[description]" rows=3 >{{book.description}}</textarea>
             </div>
             <div class="form-group">
-              <label for="Location">Book Club Location</label>
-              <br />
-              <textarea name="book[location]" rows=3 cols=30 >
-                {{book.location}}
-              </textarea>
-
-              <!-- <input type="text" name="book[description]" placeholder="Enter Bookclub Description Here"> -->
+              <label for="location">Book Club Location</label>
+              <textarea class='form-control' name="book[location]" rows=3 >{{book.location}}</textarea>
             </div>
             <div class="form-group">
               <label for="guestCount">Expected Guest Count</label>
-              <input type="number" value={{book.number}} min="0" name="book[guestCount]">
+              <input type="number" class="form-control" value={{book.number}} min="0" name="book[guestCount]">
             </div>
             <div class="form-group">
               <label for="start Date">Start Date</label>
-              <input type="date" value={{date book.startDate}} name="book[startDate]">
+              <input type="date" class="form-control" value={{date book.startDate}} name="book[startDate]">
             </div>
             <div class="form-group">
               <label for="end date">End Date</label>
-              <input type="date" value={{date book.endDate}} name="book[endDate]">
+              <input type="date" class="form-control" value={{date book.endDate}} name="book[endDate]">
             </div>
-          </div>
           <button type="submit" class="btn btn-primary">Modify Book Club</button>
         </form>
 
+        </div>
       </div>
     </div>
-  </div>

@@ -1,48 +1,38 @@
 <div class="add-a-book">
   <div class="row">
     <div class="col-sm-12">
-      <div class="well">
         <h2> Add a bookclub! </h2>
-        <form class='bookEvents' id='create-new-book'>
-          <div class="form-group">
-            <div class="form-group">
-              <label for="title">Book Title</label>
-              <input type="text" name="book[title]" placeholder="Enter Bookclub Title">
-            </div>
-            <div class="form-group">
-              <label for="description">Book Club Description</label>
-              <br />
-              <textarea name="book[description]" rows=3 cols=30 >
-              </textarea>
+        <div class="well" data-id={{book.id}}>
+          <h2> Make a new book club! </h2>
+          <form class='bookEvents' id='create-new-book'>
+              <div class="form-group">
+                <label for="title">Book Title</label>
+                <input type="text" class="form-control" name="book[title]">
+              </div>
+              <div class="form-group">
+                <label for="description">Book Club Description</label>
+                <textarea class='form-control' name="book[description]" rows=3 ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="location">Book Club Location</label>
+                <textarea class='form-control' name="book[location]" rows=3 ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="guestCount">Expected Guest Count</label>
+                <input type="number" class="form-control" min="0" name="book[guestCount]">
+              </div>
+              <div class="form-group">
+                <label for="start Date">Start Date</label>
+                <input type="date" class="form-control" name="book[startDate]">
+              </div>
+              <div class="form-group">
+                <label for="end date">End Date</label>
+                <input type="date" class="form-control" name="book[endDate]">
+              </div>
+            <button type="submit" class="btn btn-primary">Create Book Club</button>
+          </form>
 
-              <!-- <input type="text" name="book[description]" placeholder="Enter Bookclub Description Here"> -->
-            </div>
-
-            <div class="form-group">
-              <label for="Location">Book Club Location</label>
-              <br />
-              <textarea name="book[location]" rows=3 cols=30 >
-              </textarea>
-
-              <!-- <input type="text" name="book[description]" placeholder="Enter Bookclub Description Here"> -->
-            </div>
-            <div class="form-group">
-              <label for="guestCount">Expected Guest Count</label>
-              <input type="number" min="0" name="book[guestCount]">
-            </div>
-            <div class="form-group">
-              <label for="start Date">Start Date</label>
-              <input type="date" name="book[startDate]">
-            </div>
-            <div class="form-group">
-              <label for="end date">End Date</label>
-              <input type="date" name="book[endDate]">
-            </div>
           </div>
-          <button type="submit" class="btn btn-primary">Create Bookclub</button>
-        </form>
-
       </div>
     </div>
   </div>
-</div>
