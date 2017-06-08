@@ -40,13 +40,13 @@ const onYourClubsClick = function () {
 
 const onMakeClubClick = function () {
   console.log('What do you need to make clubs for anyway!')
-    $('.root-column').children().remove()
+  $('.root-column').children().remove()
   const newBookHTML = newBookForm()
   $('.root-column').append(newBookHTML)
 }
 
-const onChangePWClick = function() {
-  console.log("test PW CHange")
+const onChangePWClick = function () {
+  console.log('test PW CHange')
   $('.root-column').children().remove()
   const changePWHTML = changePWForm()
   $('.root-column').append(changePWHTML)
@@ -84,7 +84,7 @@ const onChangePW = function (event) {
 const onSignOut = function (event) {
   event.preventDefault()
 
-  console.log("You tried to sign out")
+  console.log('You tried to sign out')
   api.signOut()
     .done(ui.signOutSuccess)
     .catch(ui.onError)

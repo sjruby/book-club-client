@@ -1,16 +1,12 @@
 // const $signUpUI = $('#signUpMessage')
 // // const $signInUI = $('#signInMessage')
-const $message = $('#message')
 const store = require('../store')
-const showSignInUp = require('../templates/create-sign-sign-up.handlebars')
-const pwSignOutForms = require('../templates/add-footer.handlebars')
-const newBookForm = require('../templates/add-book-template.handlebars')
 const signUpSuccessMessage = require('../templates/signUpSucess.handlebars')
 const signedInNav = require('../templates/navSignedIn.handlebars')
 const notSignedInNav = require('../templates/navNotSignedIn.handlebars')
 const welcomePage = require('../templates/welcomePage.handlebars')
 const changePWSucessMessage = require('../templates/changePWSucess.handlebars')
-
+const failMessage = require('../templates/failureMessage.handlebars')
 
 const resetUserForms = function () {
   $('#sign-up').trigger('reset')
@@ -49,11 +45,10 @@ const signOutSuccess = () => {
 }
 
 const onError = function (response) {
-  $message.text('That bombed...as a devolper I have determined it was user error :) ')
-}
-
-const onPWError = function() {
-  $('#changePWMessage').text('That bombed...as a devolper I have determined it was user error :) ')
+  $('#failure-message').remove()
+  $('.sucess-message').remove()
+  const failureHTML = failMessage()
+  $('.root-column').prepend(failureHTML)
 }
 
 module.exports = {
@@ -61,6 +56,5 @@ module.exports = {
   onSignInSuccess,
   onChangePWSuccess,
   signOutSuccess,
-  onError,
-  onPWError
+  onError
 }
