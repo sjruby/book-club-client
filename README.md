@@ -28,7 +28,7 @@ The next steps would be to allow users to view all the books clubs being hosted,
 # How does it works
 The only required value for a user to enter is the Title of the book club.
 
-The other key information is optional.  There is no validation on dates to confirm that the book-club is starting and ending in the future OR that the user does not claim it ends before starting. In the future I would like to add a warning pop-up when the user submits odd dates, but not prevent the user from entering bad data because it is up to them how to use the application.
+The other information is optional.  There is no validation on dates to confirm that the book-club is starting and ending in the future OR that the user does not claim it ends before starting. In the future I would like to add a warning pop-up when the user submits odd dates, but not prevent the user from entering bad data because it is up to them how to use the application.
 
 # User Stories:
 - As a user I want to be able to enter bookclubs I am hosting into the app.
