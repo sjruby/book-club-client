@@ -2,10 +2,23 @@
 
 # Links:
 
-Client Repo: https://github.com/sjruby/book-club-manager-api
-Deployed Client: https://sjruby.github.io/book-club-client/
-API Repo: https://github.com/sjruby/book-club-manager-api
-Deployed API:  https://salty-citadel-91716.herokuapp.com
+- Client Repo: https://github.com/sjruby/book-club-client
+- Deployed Client: https://sjruby.github.io/book-club-client/
+- API Repo: https://github.com/sjruby/book-club-manager-api
+- Deployed API:  https://salty-citadel-91716.herokuapp.com
+
+
+# Dependincies
+
+Can be installed with npm install and include:
+
+- bable
+- bootstrap
+- eslint
+- grunt
+- handlebars
+- node
+- webpack
 
 # Bookclub Manager
 The purpose of this app is to track all the book-clubs that you are planing on hosting.  In the alpha version it can only be used to record key information about the book club you will host.  There is not social aspect
@@ -26,6 +39,8 @@ The other key information is optional.  There is no validation on dates to confi
 
 A link to the ERD is below:
 
+Note: The primary resource is called books, in retrospect that should be bookClubs.  Before adding the feature to allow users to track the books they've read, I would need to update the model names.  Because its 3:30 on Thursday before submission...books it stays!
+
 [ERD](http://i.imgur.com/vX1mcmn.jpg)
 
 # Wireframe:
@@ -34,15 +49,3 @@ A link to the wire frames can be found below at:
 [Landing Page](http://i.imgur.com/Je4FNW5.jpg)
 
 [Book Club List](http://i.imgur.com/LTBlP6x.jpg)
-
-# Dependincies
-
-Can be installed with npm install and include:
-
-- bable
-- bootstrap
-- eslint
-- grunt
-- handlebars
-- node
-- webpack
