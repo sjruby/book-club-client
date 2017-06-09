@@ -30,6 +30,7 @@ const onSignInSuccess = function (data) {
 
 const onChangePWSuccess = () => {
   $('#change-pw-sucess').remove()
+  $('#failure-message').remove()
   const successHTML = changePWSucessMessage()
   $('#change-pw-form').prepend(successHTML)
   resetUserForms()
